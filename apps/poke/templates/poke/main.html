@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login and Reg</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'poke/css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'poke/css/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'poke/css/style.css' %}">
+    </head>
+  <body>
+    <h1>Welcome!</h1>
+    <div class="container">
+      {% if messages %}
+      <div class="messages">
+        <ul>
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <form action="{% url 'register' %}" method="post">
+        <h3>Registration</h3>
+        {% csrf_token %}
+        <div>
+          <label>Name:</label>
+          <input type="text" name="name" placeholder="Name">
+        </div>
+        <div>
+          <label>Alias:</label>
+          <input type="text" name="alias" placeholder="Alias">
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="Email">
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+        <div class="">
+          <label>Confirm Password:</label>
+          <input type="password" name="confirm_password" placeholder="Confirm Password">
+        </div>
+        <div class="">
+          <label>Date of Birth:</label>
+          <input type="date"  name="birthday">
+        </div>
+        <input type="submit" value="Register">
+      </form>
+      <br>
+      <form action="{% url 'login' %}" method="post">
+        <h3>Login</h3>
+        {% csrf_token %}
+        <div class="">
+          <label>Email:</label>
+          <input type="text" name="email" placeholder="Email">
+        </div>
+        <div class="">
+          <label>Password:</label>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+        <input type="submit" value="Login">
+      </form>
+    </div>
+  </body>
+</html>

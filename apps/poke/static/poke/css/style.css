@@ -1,0 +1,41 @@
+.register{
+  width: 750px;
+  margin-right: 40px;
+  display: inline-block;
+  vertical-align: top;
+  /*border-style: solid;*/
+}
+
+.login{
+  width: 400px;
+  display: inline-block;
+  vertical-align: top;
+  /*border-style: solid;*/
+}
+
+html {
+    background: linear-gradient(to top left, white, #DDDDDD, lightblue);
+    background-repeat: no-repeat;
+    height: 2000px;
+}
+
+h3 {
+  color: #001f3f;
+}
+
+label {
+  color: #001f3f;
+}
+
+.logout {
+  padding-left: 700px;
+}
+
+form {
+  /*border-style: solid;*/
+  display: inline-block;
+}
+
+table {
+  border-style: solid;
+}
